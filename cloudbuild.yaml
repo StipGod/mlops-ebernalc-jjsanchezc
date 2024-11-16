@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/my-project-st1630-20242/mlops-ejemplo', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/my-project-st1630-20242/mlops-ejemplo']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'mlops-ejemplo', '--image=gcr.io/my-project-st1630-20242/mlops-ejemplo', '--region=us-central1', '--platform=managed']
+
+options:
+  logging: CLOUD_LOGGING_ONLY  # Para enviar logs solo a Cloud Logging
+
