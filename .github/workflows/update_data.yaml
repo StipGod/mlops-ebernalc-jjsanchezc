@@ -30,14 +30,15 @@ jobs:
       - name: Install requirements
         run: |
           python -m pip install --upgrade pip
-          ls
-          pwd
           cd lab2
           pip install -r requirements.txt
           
       - name: Execute python script 
-        run: python /lab2/data_extraction/extract_data.py
+        run: |
+            cd lab2
+            python /data_extraction/extract_data.py
 
       - name: Update Data
         run: |
-          bash ./lab2/data_extraction/update_data.sh 
+          cd lab2
+          bash ./data_extraction/update_data.sh 
