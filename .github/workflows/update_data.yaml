@@ -1,9 +1,10 @@
 name: Update Data
 
 on:
-  schedule:
-    - cron: '0 * * * *' #Every hour 
   workflow_dispatch:  # Manually
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write  # Esto permite al bot hacer push al repositorio
