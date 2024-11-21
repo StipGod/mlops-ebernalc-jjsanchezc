@@ -36,9 +36,13 @@ jobs:
       - name: Execute python script 
         run: |
             cd lab2
-            python /data_extraction/extract_data.py
+            cd data_extraction
+            pwd
+            python extract_data.py
 
       - name: Update Data
         run: |
           cd lab2
-          bash ./data_extraction/update_data.sh 
+          cd data_extraction
+          pwd
+          bash ./update_data.sh 
