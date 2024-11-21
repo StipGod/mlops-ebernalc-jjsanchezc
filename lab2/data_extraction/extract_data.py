@@ -5,7 +5,7 @@ import os
 
 # Define variables
 url = 'https://www.donostia.eus/info/ciudadano/camaras_trafico.nsf/getParkings.xsp'
-output_path = 'data'
+output_path = '../data'
 current_path = '//data_extraction'
 important_columns = ['properties.nombre', 'properties.libres']
 output_filename = 'data.csv'
